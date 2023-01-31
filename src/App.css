@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.display {
+  display: block;
+}
+
+.container{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+input{
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: rgba(252, 250, 250, 0.363);
+}
+
+.notfound{
+  color: rgba(245, 39, 39, 0.774);
+}
+.weatherdata{
+  margin: 8rem 0;
+  background-color: rgba(89, 110, 129, 0.13);
+  padding: 0.5rem 0;
+}
+.weatherdata ul{
+  list-style-type: none;
+
+}
+.city{
+  font-size: 1.5rem;
+}
