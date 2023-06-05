@@ -32,9 +32,9 @@ function App() {
 
   return (
     <>
-    <div className='container' 
-      style={{ 
-        backgroundImage: `url(${'image/weather.jpg'})`,
+    <div className='container'
+      style={{
+        backgroundImage: (weatherData?.main?.temp - 273.15) < 15 ? `url(${'image/snow-fall-winter-cold.gif'})` : (weatherData?.main?.temp - 273.15) > 30 ? `url(${'image/Sunny.gif'})` : `url(${'image/weather.jpg'})`,
         backgroundRepeat: 'no-repeat',
         width:'250px' ,
         height:'20rem',
@@ -47,7 +47,7 @@ function App() {
             onKeyDown={handleKeyDown} />
         </div>
         <div className='notfound' style={{ display: weatherData.cod === "404" ? 'block' : 'none' }}>{weatherData.message}</div>
-        <div className='weatherdata' style={{ display: weatherData.cod == "200" ? 'block' : 'none' }} >
+        <div className='weatherdata' style={{ display: weatherData.cod === "200" ? 'block' : 'none' }} >
           <ul>
             <li className='city'>{weatherData.name},  {weatherData?.sys?.country}</li>
             <li className=''>Temperature: {Math.round(weatherData?.main?.temp - 273.15)}&deg;C</li>
